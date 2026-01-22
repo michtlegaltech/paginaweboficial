@@ -12,6 +12,7 @@
             --accent: #25d366;
             --light-bg: #f8fafc;
             --border: #e2e8f0;
+            --white: #ffffff;
         }
 
         body {
@@ -24,7 +25,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Header & Hero */
+        /* Hero Section */
         header {
             background: linear-gradient(135deg, rgba(11, 60, 93, 0.95), rgba(6, 47, 79, 0.85)),
                         url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80');
@@ -38,7 +39,7 @@
         header h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
         header p { font-size: 1.2rem; max-width: 800px; margin: 15px auto; opacity: 0.9; }
 
-        /* Nav */
+        /* Navigation */
         nav {
             background: white;
             padding: 15px 0;
@@ -58,55 +59,48 @@
             text-transform: uppercase;
         }
 
-        /* Container & Cards */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         
+        /* Services Grid */
         .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { color: var(--primary); font-size: 2rem; }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin-bottom: 60px;
         }
 
         .card {
-            background: white;
+            background: var(--white);
             padding: 30px;
             border-radius: 12px;
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .price-tag { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 15px 0; }
 
-        .card h3 { margin-top: 0; color: var(--primary); height: 50px; display: flex; align-items: center; }
-        
-        .price-tag {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #2d3748;
-            margin: 15px 0;
+        /* Legal Sections Styling */
+        .legal-container {
+            margin-top: 80px;
+            background: #f1f5f9;
+            padding: 40px 20px;
+            border-radius: 16px;
         }
 
-        .service-list {
-            margin: 10px 0 20px 0;
-            padding: 0;
-            list-style: none;
-            font-size: 0.9rem;
-            color: #4a5568;
-            flex-grow: 1;
+        .legal-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
         }
 
-        .service-list li::before {
-            content: "✓";
-            color: var(--accent);
-            margin-right: 8px;
-            font-weight: bold;
-        }
+        .legal-box h3 { margin-top: 0; color: var(--primary); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .legal-box p, .legal-box li { font-size: 0.9rem; color: #4a5568; }
 
         /* Buttons */
         .btn {
@@ -121,12 +115,10 @@
             transition: 0.3s;
         }
 
-        .btn:hover { background: var(--secondary); }
+        .btn-wa { background: var(--accent); }
+        .btn-wa:hover { background: #1ebe5d; transform: scale(1.02); }
 
-        .btn-whatsapp { background: var(--accent); }
-        .btn-whatsapp:hover { opacity: 0.9; background: #1ebe5d; }
-
-        /* Floating WhatsApp */
+        /* WhatsApp Floating */
         .float-wa {
             position: fixed;
             bottom: 20px;
@@ -140,7 +132,6 @@
             justify-content: center;
             color: white;
             text-decoration: none;
-            font-size: 24px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 1000;
         }
@@ -148,98 +139,124 @@
         footer {
             background: var(--primary);
             color: white;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
             margin-top: 60px;
         }
-
-        .contact-info { margin: 20px 0; font-size: 0.95rem; }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#servicios">Escritos Disponibles</a>
-    <a href="#como">¿Cómo funciona?</a>
+    <a href="#servicios">Escritos</a>
     <a href="#contacto">Contacto</a>
+    <a href="#legal">Legal</a>
 </nav>
 
 <header id="inicio">
     <h1>MICHT LEGAL TECH</h1>
-    <p>Redacción profesional de escritos legales conforme a la normativa peruana. Atención 100% virtual, rápida y segura.</p>
+    <p>Innovación en redacción jurídica digital. Documentos listos para presentar, elaborados por expertos.</p>
 </header>
 
 <div class="container">
     
     <div class="section-title" id="servicios">
-        <h2>Catálogo de Escritos Legales</h2>
-        <p>Selecciona el documento que necesitas y recíbelo listo para presentar.</p>
+        <h2>Servicios Legales Disponibles</h2>
     </div>
 
     <div class="services-grid">
         <div class="card">
             <h3>Demanda de Alimentos</h3>
-            <p>Especializado para procesos de pensión alimentaria.</p>
+            <p>Redacción especializada para procesos de alimentos.</p>
             <div class="price-tag">S/ 80.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Demanda%20de%20Alimentos" class="btn btn-whatsapp" target="_blank">Comprar ahora</a>
+            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Demanda%20de%20Alimentos" class="btn btn-wa" target="_blank">Comprar</a>
         </div>
 
         <div class="card">
             <h3>Escrito de Adopción</h3>
-            <p>Formalización de solicitudes de adopción judicial.</p>
+            <p>Solicitudes de adopción bajo normativa vigente.</p>
             <div class="price-tag">S/ 50.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Escrito%20de%20Adopción" class="btn btn-whatsapp" target="_blank">Comprar ahora</a>
+            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Escrito%20de%20Adopción" class="btn btn-wa" target="_blank">Comprar</a>
         </div>
 
         <div class="card">
             <h3>Contestación de Demanda</h3>
-            <p>Respuesta técnica ante notificaciones judiciales.</p>
+            <p>Defensa técnica y oportuna de tus intereses.</p>
             <div class="price-tag">S/ 90.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Contestación%20de%20Demanda" class="btn btn-whatsapp" target="_blank">Comprar ahora</a>
+            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Contestación%20de%20Demanda" class="btn btn-wa" target="_blank">Comprar</a>
         </div>
 
         <div class="card">
             <h3>Apelaciones y Recursos</h3>
-            <p>Revisión de sentencias y recursos de impugnación.</p>
+            <p>Impugnaciones judiciales con base legal sólida.</p>
             <div class="price-tag">S/ 180.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Apelación%20o%20Recurso" class="btn btn-whatsapp" target="_blank">Comprar ahora</a>
+            <a href="https://wa.me/51904532695?text=Deseo%20comprar%20Apelación%20o%20Recurso" class="btn btn-wa" target="_blank">Comprar</a>
         </div>
 
         <div class="card">
             <h3>Contratos Privados</h3>
-            <ul class="service-list">
-                <li>Contrato de arrendamiento</li>
-                <li>Contrato de compraventa</li>
+            <ul style="font-size: 0.85rem; padding-left: 20px; color: #555;">
+                <li>Arrendamiento</li>
+                <li>Compraventa</li>
                 <li>Prestación de servicios</li>
             </ul>
             <div class="price-tag">Desde S/ 50.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20un%20Contrato%20Privado" class="btn btn-whatsapp" target="_blank">Comprar ahora</a>
+            <a href="https://wa.me/51904532695?text=Deseo%20un%20Contrato%20Privado" class="btn btn-wa" target="_blank">Comprar</a>
         </div>
 
         <div class="card">
-            <h3>Otros Escritos Judiciales</h3>
-            <p>Medidas cautelares, escritos de trámite, solicitudes de impulso, etc.</p>
+            <h3>Otros Escritos</h3>
+            <p>Todo tipo de escritos judiciales y administrativos.</p>
             <div class="price-tag">Desde S/ 50.00</div>
-            <a href="https://wa.me/51904532695?text=Deseo%20consultar%20por%20otros%20escritos" class="btn btn-whatsapp" target="_blank">Consultar</a>
+            <a href="https://wa.me/51904532695?text=Consultar%20otros%20escritos" class="btn btn-wa" target="_blank">Consultar</a>
         </div>
     </div>
 
-    <div class="card" id="contacto" style="margin-top: 60px; text-align: center; border-top: 4px solid var(--primary);">
-        <h2>Canales de Pago y Contacto</h2>
-        <div class="contact-info">
-            <p>📱 <strong>WhatsApp:</strong> +51 904 532 695</p>
-            <p>📧 <strong>Email:</strong> michtlegaltech@gmail.com</p>
-            <p>💳 <strong>Yape / Plin:</strong> 904 532 695</p>
-        </div>
-        <a href="https://wa.me/51904532695" class="btn" style="display: inline-block; padding: 12px 40px;">Enviar comprobante</a>
+    <div class="card" id="contacto" style="text-align: center; background: var(--primary); color: white;">
+        <h2>Central de Atención y Pagos</h2>
+        <p>Yape: <strong>904 532 695</strong></p>
+        <p>Email: <strong>michtlegaltech@gmail.com</strong></p>
+        <a href="https://wa.me/51904532695" class="btn" style="background: white; color: var(--primary); display: inline-block; padding: 12px 30px;">Enviar Comprobante</a>
     </div>
 
+    <div class="legal-container" id="legal">
+        <div class="section-title">
+            <h2>Información Legal Importante</h2>
+        </div>
+
+        <div class="legal-box">
+            <h3>Términos y Condiciones</h3>
+            <ul>
+                <li>El acceso y uso del sitio web <strong>MICHT LEGAL TECH</strong> implica la aceptación plena de los presentes Términos y Condiciones.</li>
+                <li>Brindamos servicios de <strong>redacción de escritos legales</strong> a solicitud del usuario, conforme a la información proporcionada por este.</li>
+                <li>No se brinda patrocinio judicial, asesoría legal personalizada ni representación ante autoridades judiciales o administrativas, salvo pacto expreso por escrito.</li>
+                <li>El usuario es responsable de la veracidad de la información entregada para la elaboración de los documentos.</li>
+                <li>Los pagos realizados no son reembolsables una vez iniciado el servicio.</li>
+            </ul>
+        </div>
+
+        <div class="legal-box">
+            <h3>Política de Privacidad</h3>
+            <ul>
+                <li><strong>MICHT LEGAL TECH</strong> respeta la privacidad de sus usuarios y protege sus datos personales conforme a la <strong>Ley N.º 29733 – Ley de Protección de Datos Personales</strong>.</li>
+                <li>La información proporcionada será utilizada únicamente para la elaboración del escrito legal solicitado y para fines de contacto.</li>
+                <li>No compartimos datos personales con terceros, salvo obligación legal.</li>
+                <li>El usuario puede solicitar la modificación o eliminación de sus datos escribiendo a nuestro correo de contacto: <strong>michtlegaltech@gmail.com</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="legal-box">
+            <h3>Aviso Legal</h3>
+            <p><strong>MICHT LEGAL TECH</strong> es una plataforma LegalTech dedicada a la redacción digital de documentos legales.</p>
+            <p>El contenido del sitio web no constituye asesoría legal directa ni reemplaza la consulta con un abogado colegiado. El uso de los documentos es responsabilidad exclusiva del usuario.</p>
+        </div>
+    </div>
 </div>
 
 <footer>
     <p><strong>© 2026 MICHT LEGAL TECH | LegalTech Perú</strong></p>
-    <p style="font-size: 0.8rem; opacity: 0.7;">Innovación y Redacción Jurídica Profesional</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">Calidad jurídica a un clic de distancia.</p>
 </footer>
 
 <a href="https://wa.me/51904532695" class="float-wa" target="_blank">💬</a>
